@@ -50,9 +50,9 @@ class App extends Component {
 					<Form heroName={this.heroName}/>
 				</header>
 				<main className={'main'}>
-				{this.state.character &&
+				{this.state.character === null || this.state.character ? this.state.character &&
 					<Content hero={this.state.character}/>
-				}
+				: <h2>No Match in Database</h2>}
 				</main>
 				<footer className={'footer'}>
 					<Comments />
