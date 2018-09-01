@@ -21,7 +21,6 @@ class App extends Component {
 		}
 	}
 	getHero(heroName) {
-		// console.log(heroName);
 		axios({
 			method: 'GET',
 			url: proxyUrl,
@@ -34,9 +33,6 @@ class App extends Component {
 			this.setState({
 				character: res.data.results,
 			});
-			// console.log(res.data.results);
-			console.log(this.state.character);
-			// console.log(this.state.character[0].name);
 		});
 	}
 	heroName = (name) => {
@@ -50,9 +46,9 @@ class App extends Component {
 					<Form heroName={this.heroName}/>
 				</header>
 				<main className={'main'}>
-				{this.state.character === null || this.state.character ? this.state.character &&
-					<Content hero={this.state.character}/>
-				: <h2>No Match in Database</h2>}
+					{this.state.character === null || this.state.character ?
+					this.state.character && <Content hero={this.state.character}/>
+					: <h2>No Match in Database</h2>}
 				</main>
 				<footer className={'footer'}>
 					<Comments />

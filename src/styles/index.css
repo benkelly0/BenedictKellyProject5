@@ -148,7 +148,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   padding: 0; }
 
 img {
-  max-width: 100%; }
+  width: 100%;
+  border-radius: 5px; }
 
 html {
   font-size: 62.5%; }
@@ -159,8 +160,18 @@ html {
   margin: 0 auto; }
 
 body {
-  font-size: 1.6rem;
-  text-align: center; }
+  font-size: 1.6rem; }
 
 .hide {
   display: none; }
+
+.flex {
+  display: flex; }
+
+.header {
+  text-align: center;
+  min-height: 50vh; }
+
+.heroPic,
+.heroInfo {
+  flex-basis: 50%; }

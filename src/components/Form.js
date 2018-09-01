@@ -11,7 +11,6 @@ class Form extends Component {
         this.setState({
             userInput: e.target.value
         })
-        // console.log(e.target.value);
     }
     handleSubmit = (e) => {
         e.preventDefault();
@@ -26,7 +25,9 @@ class Form extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor=""></label>
                     <input type="search" onChange={this.handleChange} value={this.state.userInput}/>
-                    <button>Search</button>
+                    <div>
+                        <button>Search</button>
+                    </div>
                 </form>
             </div>
         )

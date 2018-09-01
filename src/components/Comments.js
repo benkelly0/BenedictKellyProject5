@@ -25,7 +25,7 @@ class Comments extends Component {
     render() {
         return (
             <div className={'wrapper'}>
-
+                
             </div>
         )
     }
