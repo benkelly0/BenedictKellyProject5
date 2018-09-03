@@ -23,8 +23,8 @@ class Form extends Component {
         return (
             <div className={'wrapper'}>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor=""></label>
-                    <input type="search" onChange={this.handleChange} value={this.state.userInput}/>
+                    <label className="visuallyhidden" htmlFor="heroSearch">Enter Character's Name</label>
+                    <input className='heroSearch' name="heroSearch" type="search" onChange={this.handleChange} value={this.state.userInput} placeholder="Character's Name..."/>
                     <div>
                         <button>Search</button>
                     </div>

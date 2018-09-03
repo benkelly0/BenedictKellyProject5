@@ -12,7 +12,6 @@ class Comments extends Component {
     }
     componentDidMount() {
         dbRef.on('value', (snapshot) => {
-            console.log(snapshot.val());
             this.sortComments(snapshot.val())
         });
     }
@@ -35,25 +34,28 @@ class Comments extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.nameInput, this.state.commentInput);
         this.addCommentToDatabase(this.state.nameInput, this.state.commentInput);
+        
+        // This is supposed to empty the form but it doesn't seem to be working. It works the first time but then for some reason it won't allow typing in the inputs after that unless you refresh the page. I ended up trying the reset() method which apparently exists in react too... and it worked!
+        
         // this.setState({
-        //     name: '',
-        //     comment: '',
-        // });
-    }
-    addCommentToDatabase = (name, comment) => {
-        dbRef.push({
-            name: name,
-            comment: comment,
-        });
-    }
+            //     name: '',
+            //     comment: '',
+            // })
+        
+        document.getElementById('commentForm').reset();
+        }
+        addCommentToDatabase = (name, comment) => {
+            dbRef.push({
+                name: name,
+                comment: comment,
+            });
+        }
     render() {
         return (
-            <div className={'wrapper'}>
+            <div className={'wrapper commentSection'}>
                 <div className="commentHeader">
                     <h2>Comments</h2>
-                    <h3 className="commentDesc">Who's your favourite superhero?</h3>
                 </div>
                 <div className="commentContainer">
                     <ul className="comments">
@@ -61,19 +63,30 @@ class Comments extends Component {
                             return (
                                 <div className="comment" key={item.key}>
                                     <h4>{item.name}</h4>
-                                    <h4>{item.comment}</h4>
+                                    <p>{item.comment}</p>
                                 </div>
                             )
                         })}
                     </ul>
                 </div>
-                <form className="commentForm" onSubmit={this.handleSubmit}>
-                    <input onChange={this.handleChange} className='nameInput' type='text' id='nameInput' placeholder='Enter your name:' required value={this.state.name}/>
-                    <input onChange={this.handleChange} className='commentInput' type='text' id='commentInput' placeholder='Enter your comment...' required value={this.state.comment}/>
+                <div className='leaveComment'>
                     <div>
-                        <button>Post Comment</button>
+                        <h2>Leave a comment...</h2>
                     </div>
-		        </form>
+                    <form className="commentForm" id="commentForm" onSubmit={this.handleSubmit}>
+                        <div>
+                            <label className="visuallyhidden" htmlFor="nameInput">Enter Your Name</label>
+                            <input onChange={this.handleChange} className='nameInput' name='nameInput' type='text' id='nameInput' placeholder='Enter your name...' required value={this.state.name}/>
+                        </div>
+                        <div>
+                            <label className="visuallyhidden" htmlFor="commentInput">Enter Your Comment</label>
+                            <input onChange={this.handleChange} className='commentInput' name='commentInput' type='text' id='commentInput' placeholder='Enter your comment...' required value={this.state.comment}/>
+                        </div>
+                        <div>
+                            <button>Post Comment</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         )
     }

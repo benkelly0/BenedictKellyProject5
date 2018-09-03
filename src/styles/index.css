@@ -148,19 +148,20 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   padding: 0; }
 
 img {
-  width: 100%;
-  border-radius: 5px; }
+  max-width: 100%;
+  border-radius: 3px; }
 
 html {
   font-size: 62.5%; }
+  html body {
+    font-size: 1.6rem;
+    background: #000080;
+    color: #FF0000; }
 
 .wrapper {
   max-width: 1080px;
   width: 95%;
   margin: 0 auto; }
-
-body {
-  font-size: 1.6rem; }
 
 .hide {
   display: none; }
@@ -169,12 +170,71 @@ body {
   display: flex; }
 
 .header {
-  text-align: center;
-  min-height: 50vh; }
+  background-image: url(../assets/superheroBackground.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 70vh;
+  padding-top: 80px; }
+  .header .headerText {
+    background: rgba(0, 0, 128, 0.7);
+    text-align: center;
+    padding: 50px 0;
+    border-radius: 3px; }
+    .header .headerText h1,
+    .header .headerText h3 {
+      margin: 10px 0; }
+    .header .headerText .heroSearch {
+      border: none;
+      padding: 10px 20%;
+      border-radius: 3px;
+      margin: 10px 0;
+      text-align: center; }
+    .header .headerText button {
+      border: none;
+      border-radius: 3px;
+      padding: 10px 10%;
+      color: #000080;
+      background: #FF0000;
+      margin: 10px 0; }
 
-.heroPic,
-.heroInfo {
-  flex-basis: 50%; }
+.main {
+  min-height: 25vh;
+  background: #000080; }
 
 .infoFallback {
+  text-align: center; }
+
+.heroContent {
+  margin: 2% 0;
+  border-radius: 3px;
+  background: rgba(255, 0, 0, 0.7);
+  color: #000080; }
+  .heroContent .heroPic,
+  .heroContent .heroInfo {
+    flex-basis: 50%;
+    justify-content: space-between; }
+
+.heroPic img,
+.heroInfo {
+  margin: 10px 5%; }
+  .heroPic img li,
+  .heroInfo li {
+    list-style-type: none;
+    padding: 5% 0; }
+  .heroPic img h2,
+  .heroInfo h2 {
+    padding: 5% 0; }
+
+.heroPic img {
+  border: 5px solid #000080; }
+
+h2 {
+  text-align: center; }
+
+.commentSection {
+  background: rgba(245, 245, 245, 0.7);
+  border-radius: 3px; }
+
+.commentForm {
   text-align: center; }

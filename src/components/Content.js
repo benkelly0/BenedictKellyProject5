@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 
 class Content extends Component {
     render() {
-        console.log(this.props.hero);
         return (
-            <div className={'wrapper'}>
+            <div className='wrapper'>
                 {this.props.hero.map(hero => (
-                    <div className={'heroContent flex'} key={hero.id}>
-                        <figure className={'heroPic'}>
+                    <div className='heroContent flex' key={hero.id}>
+                        <figure className='heroPic'>
                             <img src={hero.image.url} alt={`Action shot of ${hero.name}`}/>
                         </figure>
-                        <div className={'heroInfo'}>
+                        <div className='heroInfo'>
                             <h2>{hero.name}</h2>
                             <ul>
                                 <li>Real Name: <em>{hero.biography["full-name"]}</em></li>

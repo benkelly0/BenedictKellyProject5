@@ -14,10 +14,9 @@ const url = 'http://superheroapi.com/api/10205575676227056/search/';
 
 class App extends Component {
 	constructor() {
-		console.log('constructor was called');
 		super();
 		this.state = {
-			character: null
+			character: null,
 		}
 	}
 	getHero(heroName) {
@@ -27,8 +26,8 @@ class App extends Component {
 			dataResponse: 'json',
 			params: {
 				reqUrl: url + heroName,
-				xmlToJSON: false
-			}
+				xmlToJSON: false,
+			},
 		}).then((res) => {
 			this.setState({
 				character: res.data.results,
@@ -40,25 +39,27 @@ class App extends Component {
 	}
 	render() {
 		return (
-			<div className="App">
-				<header className={'header'}>
-					<Header />
-					<Form heroName={this.heroName}/>
+			<div className='App'>
+				<header className='header'>
+					<div className='headerText wrapper'>
+						<Header />
+						<Form heroName={this.heroName}/>
+					</div>
 				</header>
-				<main className={'main'}>
+				<main className='main'>
 					{this.state.character === null || this.state.character ?
 					this.state.character && <Content hero={this.state.character}/>
-					: <div className={'infoFallback'}>
+					: <div className='infoFallback'>
 						<h2>No Match in Database</h2>
 						<h3>(or you spelled it wrong)</h3>
 					</div>}
 				</main>
-				<footer className={'footer'}>
+				<footer className='footer'>
 					<Comments />
 				</footer>
 			</div>
 		);
-	}
+	};
 }
 
 export default App;

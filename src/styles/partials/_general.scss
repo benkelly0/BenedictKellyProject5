@@ -4,12 +4,17 @@
 }
 
 img{
-    width: 100%;
-    border-radius: 5px;
+    max-width: 100%;
+    border-radius: 3px;
 }
 
 html{
 	font-size: 62.5%;
+    body{
+        font-size: 1.6rem;
+        background: #000080;
+        color: #FF0000;
+    }
 }
 
 .wrapper{
@@ -18,9 +23,6 @@ html{
     margin: 0 auto;
 }
 
-body{
-    font-size: 1.6rem;
-}
 
 .hide{
     display: none;
