@@ -61,8 +61,8 @@ class Comments extends Component {
                     <ul className="comments">
                         {this.state.comments.map((item) => {
                             return (
-                                <div className="comment" key={item.key}>
-                                    <h4>{item.name}</h4>
+                                <div className="comment flex" key={item.key}>
+                                    <h4>{item.name}:</h4>
                                     <p>{item.comment}</p>
                                 </div>
                             )
@@ -83,7 +83,7 @@ class Comments extends Component {
                             <input onChange={this.handleChange} className='commentInput' name='commentInput' type='text' id='commentInput' placeholder='Enter your comment...' required value={this.state.comment}/>
                         </div>
                         <div>
-                            <button>Post Comment</button>
+                            <button className='button'>Post Comment</button>
                         </div>
                     </form>
                 </div>

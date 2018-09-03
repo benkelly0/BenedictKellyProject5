@@ -1,5 +1,5 @@
 .main{
-    min-height: 25vh;
+    min-height: 20vh;
     background: #000080;
 }
 
@@ -28,9 +28,28 @@
     }
     h2{
         padding: 5% 0;
+        font-family: 'Bangers', cursive;
+        font-weight: 400;
+        letter-spacing: 4px;
     }
 }
 
 .heroPic img{
     border: 5px solid #000080;
+}
+
+@media (max-width: 850px){
+    .main{
+        min-height: 15vh;
+    }
+    .heroContent{
+        flex-direction: column;
+        .heroPic,
+        .heroInfo{
+            flex-basis: 100%;
+        }
+        .heroPic img{
+            width: 90%;
+        }
+    }
 }

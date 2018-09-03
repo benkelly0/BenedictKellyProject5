@@ -1,12 +1,53 @@
 h2{
     text-align: center;
+    padding: 30px 0;
+    font-family: 'Bangers', cursive;
+    font-weight: 400;
+    letter-spacing: 4px;
 }
+
 
 .commentSection{
     background: rgba(245,245,245,.7);
     border-radius: 3px;
+    color: #000080;
+    border: 3px solid #FF0000;
+    margin-bottom: 100px;
+    .comment{
+        padding: 10px 0;
+        margin: 10px 5%;
+        border: 1px solid #FF0000;
+        border-radius: 3px;
+        h4{
+            min-width: 90px;
+            padding-left: 1%;
+        }
+    }
 }
 
 .commentForm{
     text-align: center;
+    padding-bottom: 50px;
+    .nameInput,
+    .commentInput{
+        border: none;
+        width: 50%;
+        height: 40px;
+        border-radius: 3px;
+        margin: 10px 0;
+        text-align: center;
+    }
+    .commentInput{
+        width: 70%;
+    }
+    button:hover{
+        background: #000080;
+        color: #FF0000;
+    }
+}
+
+@media (max-width: 850px){
+    .commentSection{
+        margin-bottom: 10px;
+    }
 }
