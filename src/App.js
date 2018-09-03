@@ -48,7 +48,10 @@ class App extends Component {
 				<main className={'main'}>
 					{this.state.character === null || this.state.character ?
 					this.state.character && <Content hero={this.state.character}/>
-					: <h2>No Match in Database</h2>}
+					: <div className={'infoFallback'}>
+						<h2>No Match in Database</h2>
+						<h3>(or you spelled it wrong)</h3>
+					</div>}
 				</main>
 				<footer className={'footer'}>
 					<Comments />
