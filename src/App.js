@@ -13,12 +13,14 @@ const proxyUrl = 'https://proxy.hackeryou.com';
 const url = 'http://superheroapi.com/api/10205575676227056/search/';
 
 class App extends Component {
+// ORIGINAL UNMUTABLE STATE
 	constructor() {
 		super();
 		this.state = {
 			character: null,
 		}
 	}
+// API TO GET INFORMATION FOR POPULATING IN THE APP
 	getHero(heroName) {
 		axios({
 			method: 'GET',
@@ -34,11 +36,13 @@ class App extends Component {
 			});
 		});
 	}
+// FUNCTION TO RECEIVE PROP FROM FORM
 	heroName = (name) => {
 		this.getHero(name);
 	}
 	render() {
 		return (
+// CONTENT FOR THE APP
 			<div className='App'>
 				<header className='header'>
 					<div className='headerText wrapper'>

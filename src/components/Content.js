@@ -1,5 +1,7 @@
+// NODE MODULES
 import React, { Component } from 'react';
 
+// COMPONENT FOR RECEIVING PROPS FROM APP AND POPULATING CONTENT FROM MAPPED THROUGH ARRAY
 class Content extends Component {
     render() {
         return (

@@ -1,20 +1,25 @@
+// NODE MODULES
 import React, { Component } from 'react';
 import firebase from '../firebase';
 
+// VARIABLE FOR REFERENCING FIREBASE DATABASE
 const dbRef = firebase.database().ref();
 
 class Comments extends Component {
+// ORIGINAL UNMUTABLE STATE
     constructor() {
         super();
         this.state = {
             comments: [],
         };
     }
+// FUNCTION FOR SENDING DATABASE INFO TO BE SORTED WITH KEY
     componentDidMount() {
         dbRef.on('value', (snapshot) => {
             this.sortComments(snapshot.val())
         });
     }
+// FUNCTION FOR SORTING DATABASE INFO WITH KEY & SETTING NEW STATE
     sortComments = (commentObject) => {
         const commentsArray = Object.entries(commentObject).map((item) => {
             return ({
@@ -27,11 +32,13 @@ class Comments extends Component {
             comments: commentsArray
         })
     }
+// FUNCTION FOR LISTENING FOR CHANGES IN INPUTS
     handleChange = (e) => {
         this.setState({
             [e.target.id]: e.target.value,
         });
     }
+// FUNCTION FOR LISTENING FOR SUBMIT ON FORM
     handleSubmit = (e) => {
         e.preventDefault();
         this.addCommentToDatabase(this.state.nameInput, this.state.commentInput);
@@ -44,15 +51,17 @@ class Comments extends Component {
             // })
         
         document.getElementById('commentForm').reset();
-        }
-        addCommentToDatabase = (name, comment) => {
-            dbRef.push({
-                name: name,
-                comment: comment,
-            });
-        }
+    }
+// FUNCTION FOR PUSHING INFO FROM FORM TO DATABASE
+    addCommentToDatabase = (name, comment) => {
+        dbRef.push({
+            name: name,
+            comment: comment,
+        });
+    }
     render() {
         return (
+// CONTENT FOR COMMENTS
             <div className={'wrapper commentSection'}>
                 <div className="commentHeader">
                     <h2>Comments</h2>

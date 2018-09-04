@@ -1,5 +1,7 @@
+// NODE MODULES
 import React from 'react';
 
+// SIMPLE COMPONENT FOR POPULATING TEXT IN HEADER
 const Header = () => {
     return (
         <div className={'wrapper'}>
