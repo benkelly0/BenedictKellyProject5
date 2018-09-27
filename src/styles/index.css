@@ -245,6 +245,14 @@ html {
     font-family: 'Bangers', cursive;
     font-weight: 400;
     letter-spacing: 4px; }
+  .heroPic img span,
+  .heroInfo span {
+    font-style: italic; }
+
+.heroInfo {
+  background: rgba(245, 245, 245, 0.5);
+  padding: 0 5%;
+  border-radius: 3px; }
 
 .heroPic img {
   border: 5px solid #000080; }

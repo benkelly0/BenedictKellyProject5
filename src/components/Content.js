@@ -14,13 +14,13 @@ class Content extends Component {
                         <div className='heroInfo'>
                             <h2>{hero.name}</h2>
                             <ul>
-                                <li>Real Name: <em>{hero.biography["full-name"]}</em></li>
-                                <li>Race: <em>{hero.appearance.race}</em></li>
-                                <li>Gender: <em>{hero.appearance.gender}</em></li>
-                                <li>Place of Birth: <em>{hero.biography["place-of-birth"]}</em></li>
-                                <li>Good or Bad: <em>{hero.biography.alignment}</em></li>
-                                <li>Alter Egos: <em>{hero.biography["alter-egos"]}</em></li>
-                                <li>Personal connections: <em>{hero.connections.relatives}</em></li>
+                                <li>Real Name: <span>{hero.biography["full-name"]}</span></li>
+                                <li>Race: <span>{hero.appearance.race}</span></li>
+                                <li>Gender: <span>{hero.appearance.gender}</span></li>
+                                <li>Place of Birth: <span>{hero.biography["place-of-birth"]}</span></li>
+                                <li>Good or Bad: <span>{hero.biography.alignment}</span></li>
+                                <li>Alter Egos: <span>{hero.biography["alter-egos"]}</span></li>
+                                <li>Personal connections: <span>{hero.connections.relatives}</span></li>
                             </ul>
                         </div>
                     </div>

@@ -32,6 +32,15 @@
         font-weight: 400;
         letter-spacing: 4px;
     }
+    span{
+        font-style: italic;
+    }
+}
+
+.heroInfo{
+    background: rgba(245,245,245,.5);
+    padding: 0 5%;
+    border-radius: 3px;
 }
 
 .heroPic img{
